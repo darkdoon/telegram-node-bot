@@ -1,3 +1,6 @@
+# This is a fork of  [telegram-node-bot](https://github.com/Naltox/telegram-node-bot)
+The only difference is that give you the ability to enable or disable WebAdmin with the `enable:` parameter. It is set to false by default. See the WebAdmin part for more details.
+
 # telegram-node-bot
 Very powerful module for creating Telegram bots.
 
@@ -12,7 +15,7 @@ Very powerful module for creating Telegram bots.
 To install the stable version:
 
 ```bash
-npm install --save telegram-node-bot
+npm install --save @edouard.lauret/telegram-node-bot
 ```
 
 This assumes you are using [npm](https://www.npmjs.com/) as your package manager.
@@ -279,12 +282,13 @@ tg.onMaster(() => {
 ```
 
 ## Web admin
-By default library will start web admin at localhost:7777, to change that use `webAdmin` properpty:
+By default library will not start web admin at all, to change that use `webAdmin` properpty:
 ```js
 const tg = new Telegram.Telegram('YOUR_TOKEN', {
     webAdmin: {
         port: 1234,
-        host: 'localhost'
+        host: 'localhost',
+        enable: true //default : false
     }
 })
 ```
